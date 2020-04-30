@@ -85,7 +85,7 @@ $image=urlencode('https://images.pexels.com/photos/2880507/pexels-photo-2880507.
 		
 	
  
-function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage)
+/*function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage)
 {
 	FB.ui({
 		method: 'share_open_graph',
@@ -102,8 +102,10 @@ function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, o
 	function (response) {
 	// Action after response
 	});
-}
-		function shareOriginal()
+}*/
+var act = {"title : mytitle"
+};
+function shareOriginal()
 {
 	FB.ui({
 		method: 'share_open_graph',
@@ -111,7 +113,7 @@ function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, o
 		action_properties: JSON.stringify({
 			object: {
 				'og:url': window.location.href,
-				'og:title': 'title',
+				'og:title': act.title,
 				'og:description': 'overrideDescription',
 				'og:image':'https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 			}
