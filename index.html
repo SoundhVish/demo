@@ -40,9 +40,11 @@
     js = d.createElement(s); js.id = id;
     js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
     fjs.parentNode.insertBefore(js, fjs);
-	     console.log("hello");
+	   
   }(document, 'script', 'facebook-jssdk'));
-	
+	(function share(){
+		  console.log("hello");
+	});
 	/*window.fbAsyncInit = function(){
 FB.init({
     appId: '766764740521623', status: true, cookie: true, xfbml: true }); 
@@ -360,7 +362,7 @@ $image=urlencode('https://images.pexels.com/photos/2880507/pexels-photo-2880507.
    <!-- <a onclick="window.open('http://www.facebook.com/sharer.php?s=+https://soundhvish.github.io/demo/&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>-->
  <div class="fb-share-button" 
     data-href="https://soundhvish.github.io/demo/" 
-    data-layout="button_count">
+    data-layout="button_count" onclick = "share()">
   </div>
 	    <!-- 
       ================================================= -->
