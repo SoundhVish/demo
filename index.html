@@ -103,6 +103,18 @@ function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, o
 	// Action after response
 	});
 }
+		function shareOriginal()
+{
+	FB.ui({
+		method: 'share',
+		href: window.location.href
+	},
+	function (response) {
+	// Action after response
+	});
+	
+	return false;
+}
 	</script>
 	
 
@@ -391,10 +403,8 @@ function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, o
       </div>
 	 <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=+https://soundhvish.github.io/demo/" data-image="https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg?cs=srgb&dl=woman-in-white-robe-smiling-4156467.jpg&fm=jpg" data-title="Article Title" data-desc="Some description for this article" class="btnShare">Share</a>-->
    <!-- <a onclick="window.open('http://www.facebook.com/sharer.php?s=+https://soundhvish.github.io/demo/&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>-->
-<a href="#" onclick="shareOverrideOGMeta(window.location.href,
-						'hello',
-						'jhjkj',
-						'https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?cs=srgb&dl=woman-in-white-long-sleeved-top-and-skirt-standing-on-field-2880507.jpg&fm=jpg');">Share with original og:meta data</a>
+<a href="#" onclick="return shareOriginal();">Share with original og:meta data</a>
+		
 	    <!-- 
       ================================================= -->
       <footer id="footer">
