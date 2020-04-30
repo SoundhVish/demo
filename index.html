@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="public/css/font-awesome.min.css" />
       <link href="./public/css/emoji.css" rel="stylesheet" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
-	<meta property="og:title" content="Content titile" />
+	<meta property="og:title" content="meta title" />
 	<meta property="og:image" content="image ulr path" />
 	<meta property="og:url" content="url of page" />
 	<meta property="og:description" content="your content"  />
@@ -54,11 +54,11 @@ postToFeed(elem.data('title'), elem.data('desc'), elem.prop('href'), elem.data('
 
 return false;
 });*/
-<?php
-$title="hello world";
-$url= "https://soundhvish.github.io/demo/";
-$summary="hello";
-$image="https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+	 <?php
+$title=urlencode('hello world');
+$url= urlencode('https://soundhvish.github.io/demo/');
+$summary=urlencode("hello" );
+$image=urlencode('https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
 ?>
 	</script>
 	
@@ -347,7 +347,7 @@ $image="https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=
         </div>
       </div>
 	 <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=+https://soundhvish.github.io/demo/" data-image="https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg?cs=srgb&dl=woman-in-white-robe-smiling-4156467.jpg&fm=jpg" data-title="Article Title" data-desc="Some description for this article" class="btnShare">Share</a>-->
-    <a onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>
+    <a onclick="window.open('http://www.facebook.com/sharer.php?+https://soundhvish.github.io/demo/s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>
 	    <!-- 
       ================================================= -->
       <footer id="footer">
