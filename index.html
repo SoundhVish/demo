@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <title>NEW DEMO </title>
- <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="fb:app_id" content="766764740521623" />
+    <meta property="og:url"           content="" />
+    <meta property="og:description"   content="" />
+    <meta property="og:image"         content="" />
     <!-- Stylesheets
       ================================================= -->
       <link rel="stylesheet" href="public/css/bootstrap.min.css" />
@@ -12,11 +16,7 @@
       <link rel="stylesheet" href="public/css/font-awesome.min.css" />
       <link href="./public/css/emoji.css" rel="stylesheet" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
-	<meta property="fb:app_id" content="766764740521623" />
-	<meta property="og:url"           content="" />
- 
-  <meta property="og:description"   content="" />
-  <meta property="og:image"         content="" />
+
 
       <!--Google Font-->
       <link
@@ -52,9 +52,7 @@
     fjs.parentNode.insertBefore(js, fjs);
 	   
   }(document, 'script', 'facebook-jssdk'));
-	function share(){
-		  console.log("hello");
-	}
+
 	/*window.fbAsyncInit = function(){
 FB.init({
     appId: '766764740521623', status: true, cookie: true, xfbml: true }); 
@@ -108,8 +106,14 @@ var act = {"title" : "mytitle",
 	  "img" : "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"};
 function shareOriginal()
 {
-	/*FB.ui({
-		method: 'share_open_graph',
+		  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:title');
+  link.content = "this is my title";
+  document.getElementsByTagName('head')[0].appendChild(link);
+	FB.ui({
+		method:'share',
+		href='https://soundhvish.github.io/demo/'
+		/*method: 'share_open_graph',
 		action_type: 'og.shares',
 		action_properties: JSON.stringify({
 			object: {
@@ -118,15 +122,12 @@ function shareOriginal()
 				'og:description': act.desc,
 				'og:image':act.img
 			}
-		})
+		})*/
 	},
 	function (response) {
 	// Action after response
-	})*/
-	  var link = document.createElement('meta');
-  link.setAttribute('property', 'og:title');
-  link.content = "this is my title";
-  document.getElementsByTagName('head')[0].appendChild(link);
+	})
+
 	console.log("helloo")
 	return false;
 }
