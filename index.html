@@ -5,9 +5,9 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="fb:app_id" content="766764740521623" />
-    <meta property="og:url"           content="" />
+    <!--<meta property="og:url"           content="" />
     <meta property="og:description"   content="" />
-    <meta property="og:image"         content="" />
+    <meta property="og:image"         content="" />-->
     <!-- Stylesheets
       ================================================= -->
       <link rel="stylesheet" href="public/css/bootstrap.min.css" />
@@ -109,7 +109,7 @@ function shareOriginal()
 
 	FB.ui({
 		method:'share',
-		href:'https://soundhvish.github.io/demo/'
+		//href:'https://soundhvish.github.io/demo/'
 		/*method: 'share_open_graph',
 		action_type: 'og.shares',
 		action_properties: JSON.stringify({
@@ -125,8 +125,8 @@ function shareOriginal()
 	// Action after response
 	})
   var link = document.createElement('meta');
-  link.setAttribute('property', 'og:title');
-  link.content = "this is my title";
+  link.setAttribute('property', 'og:url');
+  link.content = document.location.href;
   document.getElementsByTagName('head')[0].appendChild(link);
 	console.log("helloo")
 	return false;
