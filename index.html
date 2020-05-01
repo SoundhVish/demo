@@ -107,8 +107,8 @@ var act = {"title" : "mytitle",
 function shareOriginal()
 {
 
-	FB.ui({
-		method:'share',
+	//FB.ui({
+		//method:'share',
 		//href:'https://soundhvish.github.io/demo/'
 		/*method: 'share_open_graph',
 		action_type: 'og.shares',
@@ -120,7 +120,7 @@ function shareOriginal()
 				'og:image':act.img
 			}
 		})*/
-	},
+	//},
 	function (response) {
 	// Action after response
 	})
@@ -419,7 +419,7 @@ function shareOriginal()
       </div>
 	 <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=+https://soundhvish.github.io/demo/" data-image="https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg?cs=srgb&dl=woman-in-white-robe-smiling-4156467.jpg&fm=jpg" data-title="Article Title" data-desc="Some description for this article" class="btnShare">Share</a>-->
    <!-- <a onclick="window.open('http://www.facebook.com/sharer.php?s=+https://soundhvish.github.io/demo/&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>-->
-<a href="#" onclick="return shareOriginal();">Share with original og:meta data</a>
+<a href="#" class="fb-share-button" onclick="return shareOriginal();"></a>
 		
 	    <!-- 
       ================================================= -->
