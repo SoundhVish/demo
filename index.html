@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <title>NEW DEMO </title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="fb:app_id" content="766764740521623" />
-    <!--<meta property="og:url"           content="" />
-    <meta property="og:description"   content="" />
-    <meta property="og:image"         content="" />-->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="fb:app_id" content="766764740521623" />
+  <meta property="og:url"           content="https://soundhvish.github.io/demo/" />
+  <meta property="og:title" content="this is my title">
+  <meta property="og:description"   content="this is my description" />
+  <meta property="og:image"         content="https://cdn.glitch.com/5b2766b5-a31c-44f2-aa07-0b9a781ec4b2%2Fp1.jfif?v=1586547980510" />
     <!-- Stylesheets
       ================================================= -->
       <link rel="stylesheet" href="public/css/bootstrap.min.css" />
@@ -15,7 +16,7 @@
       <link rel="stylesheet" href="public/css/ionicons.min.css" />
       <link rel="stylesheet" href="public/css/font-awesome.min.css" />
       <link href="./public/css/emoji.css" rel="stylesheet" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
 
 
       <!--Google Font-->
@@ -31,27 +32,27 @@
       href="https://cdn.glitch.com/bc403f72-b5d3-43ec-ad72-74f21c0382f6%2Ffavicon.png?v=1585058964135"
       />
       <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=986351911819016&autoLogAppEvents=1"></script>
- </script>
-     <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function() {
-  FB.init({
-    appId            : '766764740521623',
-    autoLogAppEvents : true,
-    xfbml            : true,
-    version          : 'v2.10'
-  });
-  
-  };
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-    fjs.parentNode.insertBefore(js, fjs);
-     
-  }(document, 'script', 'facebook-jssdk'));
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=986351911819016&autoLogAppEvents=1"></script>
+    </script>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '766764740521623',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.10'
+        });
+
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+
+      }(document, 'script', 'facebook-jssdk'));
 
   /*window.fbAsyncInit = function(){
 FB.init({
@@ -80,9 +81,9 @@ $url= urlencode('https://soundhvish.github.io/demo/');
 $summary=urlencode("hello" );
 $image=urlencode('https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
 ?>*/
-    
-  
- 
+
+
+
 /*function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage)
 {
   FB.ui({
@@ -102,58 +103,54 @@ $image=urlencode('https://images.pexels.com/photos/2880507/pexels-photo-2880507.
   });
 }*/
 var act = {"title" : "mytitle",
-    "desc" : "my desc",
-    "img" : "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"};
+"desc" : "my desc",
+"img" : "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"};
+
 function shareOriginal()
 {
 
-  //FB.ui({
-    //method:'share',
-    //href:'https://soundhvish.github.io/demo/'
-    /*method: 'share_open_graph',
-    action_type: 'og.shares',
-    action_properties: JSON.stringify({
-      object: {
-        'og:url': window.location.href,
-        'og:title': act.title,
-        'og:description': act.desc,
-        'og:image':act.img
-      }
-    })*/
-  //},
-  function (response) {
+  FB.ui({
+   method: 'share_open_graph',
+   action_type: 'og.shares',
+   action_properties: JSON.stringify({
+    object: {
+      'og:url': window.location.href,
+      'og:title': act.title,
+      'og:description': act.desc,
+      'og:image':act.img
+    }
+  })
+ },
+ function (response) {
   // Action after response
-  }
-  var link = document.createElement('meta');
-  link.setAttribute('property', 'og:url');
-  link.content = document.location.href;
-  document.getElementsByTagName('head')[0].appendChild(link);
-  console.log("helloo")
-  return false;
 }
-  </script>
-  
-
- 
 
 
-      <!-- Your share button code -->
+return false;
+}
+</script>
 
-      <style>
-        html.a-fullscreen .a-canvas {
-          position: relative !important;
-        }
-        html.a-fullscreen {
-          position: relative !important;
-        }
-        html.a-fullscreen body {
-          overflow: auto !important;
-        }
-      </style>
-    </head>
-    <body>
-      
-      <!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>-->
+
+
+
+
+<!-- Your share button code -->
+
+<style>
+  html.a-fullscreen .a-canvas {
+    position: relative !important;
+  }
+  html.a-fullscreen {
+    position: relative !important;
+  }
+  html.a-fullscreen body {
+    overflow: auto !important;
+  }
+</style>
+</head>
+<body>
+
+  <!--<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>-->
     <!-- Header
       ================================================= -->
       <header id="header">
@@ -417,92 +414,92 @@ function shareOriginal()
           </div>
         </div>
       </div>
-   <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=+https://soundhvish.github.io/demo/" data-image="https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg?cs=srgb&dl=woman-in-white-robe-smiling-4156467.jpg&fm=jpg" data-title="Article Title" data-desc="Some description for this article" class="btnShare">Share</a>-->
-   <!-- <a onclick="window.open('http://www.facebook.com/sharer.php?s=+https://soundhvish.github.io/demo/&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>-->
-<a href="#"  onclick="return shareOriginal();">share</a>
-    
-      <!-- 
-      ================================================= -->
-      <footer id="footer">
-        <div class="container" id="contactsec">
-          <div class="row">
-            <div class="footer-wrapper">
-              <div class="col-md-3 col-sm-3">
-                <a href="https://www.propvr.in/"
-                ><img
-                src="https://cdn.glitch.com/bc403f72-b5d3-43ec-ad72-74f21c0382f6%2Flogo-black3.png?v=1585059218361"
-                alt=""
-                class="footer-logo"
-                /></a>
-                <ul class="list-inline social-icons">
-                  <li>
-                    <a href="#"><i class="icon ion-social-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="icon ion-social-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="icon ion-social-googleplus"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="icon ion-social-pinterest"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="icon ion-social-linkedin"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <h5>For individuals</h5>
-                <ul class="footer-links">
-                  <li><a href="https://propvr.tech/signup.html">Signup</a></li>
-                  <li><a href="https://propvr.tech/signup.html">login</a></li>
-                  <li><a href="https://www.propvr.in/">Explore</a></li>
-                </ul>
-              </div>
+      <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=+https://soundhvish.github.io/demo/" data-image="https://images.pexels.com/photos/4156467/pexels-photo-4156467.jpeg?cs=srgb&dl=woman-in-white-robe-smiling-4156467.jpg&fm=jpg" data-title="Article Title" data-desc="Some description for this article" class="btnShare">Share</a>-->
+      <!-- <a onclick="window.open('http://www.facebook.com/sharer.php?s=+https://soundhvish.github.io/demo/&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=550,height=300');" href="javascript: void(0)">share</a>-->
+      <a href="#"  onclick="return shareOriginal();">share</a>
 
-              <div class="col-md-2 col-sm-2">
-                <h5>About</h5>
-                <ul class="footer-links">
-                  <li><a href="https://www.propvr.in/about">About us</a></li>
-                  <li>
-                    <a href="https://www.propvr.in/contact-us">Contact us</a>
-                  </li>
-                  <li>
-                    <a href="https://www.propvr.in/termsandconditions">Terms</a>
-                  </li>
-                  <li><a href="https://www.propvr.in/">Help</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3 col-sm-3">
-                <h5>Contact Us</h5>
-                <ul class="contact">
-                  <li>
-                    <i class="icon ion-ios-telephone-outline"></i>+1 (234) 222
-                    0754
-                  </li>
-                  <li>
-                    <i class="icon ion-ios-email-outline"></i
-                      >info@thunder-team.com
+      <!-- 
+        ================================================= -->
+        <footer id="footer">
+          <div class="container" id="contactsec">
+            <div class="row">
+              <div class="footer-wrapper">
+                <div class="col-md-3 col-sm-3">
+                  <a href="https://www.propvr.in/"
+                  ><img
+                  src="https://cdn.glitch.com/bc403f72-b5d3-43ec-ad72-74f21c0382f6%2Flogo-black3.png?v=1585059218361"
+                  alt=""
+                  class="footer-logo"
+                  /></a>
+                  <ul class="list-inline social-icons">
+                    <li>
+                      <a href="#"><i class="icon ion-social-facebook"></i></a>
                     </li>
                     <li>
-                      <i class="icon ion-ios-location-outline"></i>228 Park Ave S
-                      NY, USA
+                      <a href="#"><i class="icon ion-social-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="icon ion-social-googleplus"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="icon ion-social-pinterest"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="icon ion-social-linkedin"></i></a>
                     </li>
                   </ul>
                 </div>
+                <div class="col-md-2 col-sm-2">
+                  <h5>For individuals</h5>
+                  <ul class="footer-links">
+                    <li><a href="https://propvr.tech/signup.html">Signup</a></li>
+                    <li><a href="https://propvr.tech/signup.html">login</a></li>
+                    <li><a href="https://www.propvr.in/">Explore</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-2 col-sm-2">
+                  <h5>About</h5>
+                  <ul class="footer-links">
+                    <li><a href="https://www.propvr.in/about">About us</a></li>
+                    <li>
+                      <a href="https://www.propvr.in/contact-us">Contact us</a>
+                    </li>
+                    <li>
+                      <a href="https://www.propvr.in/termsandconditions">Terms</a>
+                    </li>
+                    <li><a href="https://www.propvr.in/">Help</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <h5>Contact Us</h5>
+                  <ul class="contact">
+                    <li>
+                      <i class="icon ion-ios-telephone-outline"></i>+1 (234) 222
+                      0754
+                    </li>
+                    <li>
+                      <i class="icon ion-ios-email-outline"></i
+                        >info@thunder-team.com
+                      </li>
+                      <li>
+                        <i class="icon ion-ios-location-outline"></i>228 Park Ave S
+                        NY, USA
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="copyright">
+              <p>Copyright © 2019 Touchwizard Technologies. All rights reserved</p>
+            </div>
+          </footer>
+          <!--preloader-->
+          <div id="spinner-wrapper">
+            <div class="spinner"></div>
           </div>
-          <div class="copyright">
-            <p>Copyright © 2019 Touchwizard Technologies. All rights reserved</p>
-          </div>
-        </footer>
-        <!--preloader-->
-        <div id="spinner-wrapper">
-          <div class="spinner"></div>
-        </div>
-        <!--Buy button-->
+          <!--Buy button-->
     <!-- Scripts
       ================================================= -->
       <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
@@ -763,7 +760,7 @@ function sendimg(e) {
         });
       });
     </script>
-   
+
     <div
     class="modal"
     id="shareModal"
