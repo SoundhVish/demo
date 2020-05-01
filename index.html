@@ -14,7 +14,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
 	<meta property="fb:app_id" content="766764740521623" />
 	<meta property="og:url"           content="" />
-  <meta property="og:title"         content="" />
+ 
   <meta property="og:description"   content="" />
   <meta property="og:image"         content="" />
 
@@ -123,6 +123,10 @@ function shareOriginal()
 	function (response) {
 	// Action after response
 	})*/
+	  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:title');
+  link.content = "this is my title";
+  document.getElementsByTagName('head')[0].appendChild(link);
 	console.log("helloo")
 	return false;
 }
