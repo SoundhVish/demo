@@ -124,7 +124,10 @@ function shareOriginal()
   function (response) {
   // Action after response
   }
-
+  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:url');
+  link.content = document.location.href;
+  document.getElementsByTagName('head')[0].appendChild(link);
   console.log("helloo")
   return false;
 }
