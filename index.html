@@ -106,10 +106,7 @@ var act = {"title" : "mytitle",
 	  "img" : "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"};
 function shareOriginal()
 {
-		  var link = document.createElement('meta');
-  link.setAttribute('property', 'og:title');
-  link.content = "this is my title";
-  document.getElementsByTagName('head')[0].appendChild(link);
+
 	FB.ui({
 		method:'share',
 		href='https://soundhvish.github.io/demo/'
@@ -127,7 +124,10 @@ function shareOriginal()
 	function (response) {
 	// Action after response
 	})
-
+  var link = document.createElement('meta');
+  link.setAttribute('property', 'og:title');
+  link.content = "this is my title";
+  document.getElementsByTagName('head')[0].appendChild(link);
 	console.log("helloo")
 	return false;
 }
