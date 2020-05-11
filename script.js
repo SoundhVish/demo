@@ -1,12 +1,10 @@
-"use strict";
-
-
+ "use strict"
 const storage = firebase.storage();
 var storageRef = storage.ref();
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log("user in");
+    console.log(auth.currentUser.uid);
     $("#logout").show();
     $("#loginbtn").hide();
   } else {
@@ -14,7 +12,37 @@ auth.onAuthStateChanged(user => {
     $("#logout").hide();
     $("#loginbtn").show();
   }
-});
+});  
+
+var queryString = decodeURIComponent(window.location.search);
+queryString = queryString.substring(1);
+console.log(queryString);
+var qstrnew=queryString.replace("para1=","");
+console.log(qstrnew);
+//if(localStorage.getItem("userid")!= null){
+  var rootRef = db.ref("registeredusers/");
+  //var userid=localStorage.getItem("userid");
+rootRef
+        .orderByChild("user_uid")
+        .equalTo(qstrnew)
+        .once("value", function(snap) {
+      console.log(snap.val());
+      snap.forEach(function(snapy) {
+        var key = snapy.key;
+        var childData = snapy.val();
+
+        //this will be the actual email value found
+        const uname = childData.name;
+        console.log(uname);
+        document.getElementById("uname").innerHTML =  uname;
+        //document.getElementById("uname1").innerHTML = uname;
+  //localStorage.removeItem('userid');
+      });
+});///")//  //var uname=rootRef.orderByChild('email').equalTo("vishali.cnr@gmail.come);
+  //$("#logout").hide();
+  //$("#")
+  
+//}
 
 //storage to db
 
@@ -44,13 +72,13 @@ auth.onAuthStateChanged(user => {
 
 //likes
 
-function trigger(snap1, snap3) {
+function trigger(snap1,uid) {
   var user = auth.currentUser;
   auth.onAuthStateChanged(user => {
     if (user) {
       console.log(user.uid);
       const like_user_id = user.uid;
-      like(snap1, snap3, like_user_id);
+      like(snap1, uid,like_user_id);
     } else {
       console.log(user);
 
@@ -59,9 +87,10 @@ function trigger(snap1, snap3) {
   });
 }
 
-function like(user_id, img_id, like_user_id) {
+function like(pro_id,uid, like_user_id) {
   // const img_url = document.getElementById("img_src").src;
   //var uid = firebase.auth().currentUser;
+  console.log(pro_id);
   var user = auth.currentUser;
   console.log(user.uid);
   var u_id = user.uid;
@@ -69,25 +98,20 @@ function like(user_id, img_id, like_user_id) {
     user_uid: u_id
   };
   var rootRef = db
-    .ref("registeredusers/" + user_id + "/images/" + img_id + "/Likes")
+    .ref("registeredusers/" + uid + "/projects/" + pro_id + "/Likes/")
     .push(obj)
     .then(function() {
-      var ref = db.ref(
-        "registeredusers/" + user_id + "/images/" + img_id + "/Likes"
-      );
+      var ref = db.ref("registeredusers/" + uid + "/projects/" + pro_id + "/Likes/");
       ref.once("value", function(snap) {
-        document.getElementById(img_id).innerHTML = snap.numChildren();
+        document.getElementById(pro_id).innerHTML = snap.numChildren();
       });
       
     });
-  var checkbox = document.getElementById("likecheck");
-  //var checkbox1 = document.getElementById("likecheck1");
+  var checkbox = document.getElementById(pro_id+"check");
   checkbox.addEventListener("change", function(e){ 
     if (checkbox.checked == false) {
       console.log("inside false check");
-      var rotRef = db.ref(
-        "registeredusers/" + user_id + "/images/" + img_id + "/Likes/"
-      );
+      var rotRef = db.ref("registeredusers/" + uid + "/projects/" + pro_id + "/Likes/");
     
     rotRef
         .orderByChild("user_uid")
@@ -99,7 +123,7 @@ function like(user_id, img_id, like_user_id) {
             rotRef.child(key).remove();
           }
           rotRef.once("value", function(snap) {
-            document.getElementById(img_id).innerHTML = snap.numChildren();
+            document.getElementById(pro_id).innerHTML = snap.numChildren();
           });
         });
   }
@@ -178,7 +202,7 @@ logi.addEventListener("submit", e => {
     auth
       .signInWithEmailAndPassword(email, psw)
       .then(cred => {
-        //console.log(cred.user);
+        //console.log(cred.uid);
         logi.reset();
        
         // window.location.href = "index.html";
@@ -227,8 +251,8 @@ sup.addEventListener("submit", e => {
       .then(cred => {
         console.log(cred.user.uid);
         sup.reset();
-        var rotRef = db.ref("registeredusers/signed_users");
-        //var rotRef = db.ref("users/User_uid/images/img_id/comment")
+        var rotRef = db.ref("registeredusers/signed_users/");
+        //var rotRef = db.ref("registeredusers/User_uid/images/img_id/comment")
         const autoId = auth.currentUser.uid;
 
         var obj = {
@@ -259,21 +283,21 @@ logout.addEventListener("click", e => {
 
 //comment
 
-function post(snap1, snap3) {
+function post(snap1, uid) {
   var user = auth.currentUser;
   
   if (user) {
     console.log(user.uid);
     const cmnt_uid = user.uid;
-    comment(snap1, snap3, cmnt_uid);
+    comment(snap1, uid, cmnt_uid);
   } else {
     console.log(user);
 
     $("#signupmodal").modal("show");
   }
 }
-function comment(user_id, img_id, cmnt_uid) {
-  const comment = document.querySelector("#com");
+function comment(user_id, uid, cmnt_uid) {
+  const comment = document.getElementById(user_id+"com");
   var rotRef = db.ref("registeredusers/signed_users");
 
   rotRef
@@ -294,14 +318,14 @@ function comment(user_id, img_id, cmnt_uid) {
         };
         var rootRef = db
           .ref(
-            "registeredusers/" + user_id + "/images/" + img_id + "/Comments/"
+            "registeredusers/" + uid + "/projects/" + user_id + "/Comments/"
           )
           .push(obj)
           .then(function() {
             var ref = db.ref(
-              "registeredusers/" + user_id + "/images/" + img_id + "/Comments/"
+              "registeredusers/" + uid + "/projects/" + user_id + "/Comments/"
             );
-            document.getElementById("com").reset();
+            //document.getElementById("com").reset();
           });
 
       });
@@ -391,7 +415,7 @@ jQuery(document).ready(function($) {
 
 
         // fix masonry layout for chrome due to image elements were loaded after masonry layout population
-        // we are refreshing masonry layout after all images are fetched.
+       // we are refreshing masonry layout after all images are fetched.
         var $mElement = $('.img-wrapper img');
         var count = $mElement.length;
         var loaded = 0;
