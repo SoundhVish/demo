@@ -1,0 +1,293 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <!-- Stylesheets
+    ================================================= -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="public/css/ionicons.min.css" />
+    <link rel="stylesheet" href="public/css/font-awesome.min.css" />
+    <link href="public/css/emoji.css" rel="stylesheet" />
+
+    <!--Google Font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!--Favicon-->
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.glitch.com/bc403f72-b5d3-43ec-ad72-74f21c0382f6%2Ffavicon.png?v=1585058964135"
+    />
+  </head>
+  <header class="header-appear" onchange="headerAppear(this)">
+    <!--Navigation-->
+    <nav
+      class="navbar navbar-top-default navbar-dark navbar-box navbar-expand-lg navbar-simple nav-box-round"
+      style="z-index:99"
+    >
+      <!-- class="navbar navbar-expand-lg navbar-light bg-light -->
+      <div class="container">
+        <a
+          href="javascript:void(0)"
+          title="Logo"
+          class="logo scroll"
+          style="position: absolute; left: 68px;"
+        >
+          <!--Logo Default-->
+          <img
+            src="https://cdn.glitch.com/bc403f72-b5d3-43ec-ad72-74f21c0382f6%2Flogo-black3.png?v=1588319320453"
+            alt="logo"
+            class="logo-dark default"
+          />
+        </a>
+
+        <!--Nav Links-->
+        <div
+          class="collapse navbar-collapse"
+          id="wexim"
+          style="position: absolute; right: 68px;"
+        >
+          <div class="navbar-nav ml-auto">
+            <a
+              class="nav-link btn btn-large btn-gradient btn-rounded "
+              href="https://propvr.in/plans"
+              target="_blank"
+              style="margin-right: 31px; color:white;font-family: 'Roboto', sans-serif;background-image: none; background-color: mediumvioletred;"
+              >Upgrade</a
+            >
+            <a
+              class="nav-link btn btn-large btn-gradient btn-rounded "
+              href="https://propvr.tech/#contact"
+              target="_blank"
+              style="margin-right: 31px; color:white;font-family: 'Roboto', sans-serif;"
+              >Contact Us</a
+            >
+
+            <div
+              class="collapse navbar-collapse"
+              id="navbarSupportedContent"
+              style="z-index: 104"
+            >
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle btn btn-large btn-gradient btn-rounded "
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="margin-right: 31px; color:white"
+                  >
+                    <i class="fa fa-user fa-4" aria-hidden="true"></i>
+
+                    <b
+                      id="fname"
+                      style="font-family: 'Roboto', sans-serif;margin-left: 6px;"
+                      >NAME</b
+                    >
+                  </a>
+
+                  <ul
+                    style="left: 0px;right: 20px;"
+                    class="dropdown-menu dropdown-menu-right animate slideIn"
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <!-- <li style="text-align: center;">
+                      <b id="fname" style="font-family: 'Roboto', sans-serif;">NAME</b>
+                    </li> -->
+                    <li>
+                      <p style="text-align: center;">
+                        <a
+                          style="font-family: 'Roboto', sans-serif;"
+                          href="/productselection.html"
+                          >Products</a
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <!-- <a class="dropdown-item" href="#">Another action</a> -->
+                      <div
+                        class="dropdown-divider"
+                        style=" margin: .2rem 0;"
+                      ></div>
+                    </li>
+                    <li>
+                      <p style="text-align: center;">
+                        <a
+                          style="font-family: 'Roboto', sans-serif;"
+                          href="/analytics.html"
+                          >Analytics</a
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <!-- <a class="dropdown-item" href="#">Another action</a> -->
+                      <div
+                        class="dropdown-divider"
+                        style=" margin: .2rem 0;"
+                      ></div>
+                    </li>
+                    <li>
+                      <p style="text-align: center;">
+                        <a
+                          style="font-family: 'Roboto', sans-serif;"
+                          href="https://www.propvr.in/blog/"
+                          >Help</a
+                        >
+                      </p>
+                    </li>
+                    <li>
+                      <!-- <a class="dropdown-item" href="#">Another action</a> -->
+                      <div
+                        class="dropdown-divider"
+                        style=" margin: .2rem 0;"
+                      ></div>
+                    </li>
+                    <li>
+                      <p style="text-align: center;">
+                        <a
+                          style="font-family: 'Roboto', sans-serif;"
+                          href="#"
+                          onclick="signOut()"
+                          >Sign out</a
+                        >
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body>
+    
+  
+  <form
+    
+    id="login_form"
+    class="login_form"
+        method="GET" action="index.html"
+    novalidate
+  >
+    <div class="form-group">
+      <div class="icon2">
+        <i class="fa fa-user"></i>
+      </div>
+      <input
+        type="text"
+        class="form-control"
+        id="form211"
+        placeholder=" Enter email"
+      />
+    </div>
+    <div class="form-group">
+      <div class="icon2">
+        <i class="fa fa-lock"></i>
+      </div>
+      <input
+        type="password"
+        class="form-control"
+        id="form111"
+        placeholder=" Password"
+      />
+    </div>
+    <p id="errormsg" style="color:red; font-size:12px;"></p>
+    <div class="already">
+      <a href="#" style="cursor:pointer;">Forgot Password?</a>
+    </div>
+    <div class="create">
+      <a
+        data-toggle="modal"
+        data-target="#signupmodal"
+        data-dismiss="modal"
+        style="cursor:pointer;"
+        id="create"
+        >Create an account?</a
+      >
+    </div>
+    <button id="login" class="btn btn-block" type="submit" onclick ="sample()">
+      <i class="fa fa-sign-in"></i> Login
+    </button>
+  </form>
+  </body>
+</html>
+ <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-storage.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBFxRtxrD3jM6WfLSVksicZGadFgUQ9tVM",
+        authDomain: "socio-8c7cf.firebaseapp.com",
+        databaseURL: "https://socio-8c7cf.firebaseio.com",
+        projectId: "socio-8c7cf",
+        storageBucket: "socio-8c7cf.appspot.com",
+        messagingSenderId: "971172228538",
+        appId: "1:971172228538:web:0729d10ad3b47df8748183"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.database();
+    </script>
+<script>
+  
+
+  function sample(){
+
+    const logi = document.querySelector("#login_form");
+logi.addEventListener("submit", e => {
+  e.preventDefault();
+ // localStorage.removeItem('userid');
+ 
+  const email = logi["form211"].value;
+  const psw = logi["form111"].value;
+  
+localStorage.setItem("userid",email );
+  
+  var error = document.getElementById("errormsg");
+  var vemail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  var validpass = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{6,20}$/g;
+  if (email == "") {
+    error.innerHTML = "Enter Your Email";
+  } else if (psw == "") {
+    error.innerHTML = "Enter Your Password";
+  } else if (!email.match(vemail)) {
+    error.innerHTML = "Invalid Email";
+  } else {
+    error.innerHTML = "Logging in";
+    auth
+      .signInWithEmailAndPassword(email, psw)
+      .then(cred => {
+        console.log(cred.user.uid);
+       
+        logi.reset();
+        var value1=cred.user.uid;
+        var queryString = "?para1=" + value1;
+        window.location.href = "index.html" + queryString;
+       
+      //document.getElementById("user").innerHTML = localStorage.getItem("userid");
+       
+
+        //document.getElementById("loginbtn").style.display='none';
+      })
+      .catch(function(err) {
+        error.innerHTML = err;
+      });
+  }
+});
+
+  }
+
+</script>
